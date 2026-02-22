@@ -6,6 +6,7 @@
     padding: 0;
     font-family: 'Kadwa', serif;
     font-weight: normal;
+    box-sizing: border-box;
 }
 
 body{
@@ -166,7 +167,7 @@ ul{
     display: flex;
     background-color: var(--cor-azul);
     color: var(--cor-branco);
-    border: solid 1rem var(--cor-branco);
+    border: solid 1rem;
     align-items: center;
     font-size: 1.5rem;
     border-radius: 10px;
@@ -237,12 +238,13 @@ footer{
 }
 
 footer h1{
-    font-size: 1.75rem;
+    font-weight: bold;
+    font-size: 2.25rem;
         margin: 0;
 }
 
 footer p{
-    font-size:1rem;
+    font-size:1.4rem;
 }
 footer p, footer h1{
     color: var(--cor-branco);
@@ -250,12 +252,20 @@ footer p, footer h1{
 
 footer button{
     background-color:var(--cor--amarelo);
-    border: 0px;
+    font-size: 1.3rem;
+    border: 0;
     color: var(--cor-preto);
+}
+
+.mensagem input{
+    display: flex;
+    max-width: 300px;
+    height: 100%;
 }
 
 footer input{
     width: 100%;
+    font-size: 1rem;
     border: solid 2px var(--cor-input--cinzento);
     padding-left: 0.2rem;
 }
@@ -277,10 +287,25 @@ footer input{
     flex-direction:column;
 }
 
-.email{
+.email-conteudo{
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.email-campos{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 200px;
+}
+
+.email textarea{
+    width: 300px;
+    resize: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: solid 2px var(--cor-input--cinzento);
 }
 
 .direitos{
@@ -297,19 +322,38 @@ footer input{
     font-size:0.75rem;
 }
 
+/*MEDIA QUERIES TABLET*/
+
 @media (max-width: 1350px){
+    
     .logotipo img{
     width: 167px;
     height: 64px;
-}
+    }
+    
     ul{
         font-size: 1rem;
     }
-
     .investigacao-main{
         flex-direction: column;
     }
+    
+    h1{font-size:3.2rem;}
+
+    .objetivo h2, .missao h2{font-size: 3.5rem ;}
+    .objetivo p, .missao p{font-size: 1.7rem;}
+
+    .footer-container{
+        width: 80%;
+        gap: 1rem;
+    }
+
+    .footer-container p{
+        font-size: 1.2rem;
+    }
 }
+
+/*MEDIA QUERIES MOBILE*/
 
 @media (max-width: 980px){
     .logotipo{
@@ -359,22 +403,79 @@ footer input{
         flex-direction: column;
     }
 
+    .investigacao-main p{font-size:1rem;}
+    .investigacao-main h2{font-size:1.35rem;}
+    .missao h2, .missao p{gap: 0;}
+
     .grid{
         grid-template-columns: 1fr;
     }
 
+    .item{
+        text-align: center;
+    }
+
+    .conquistas h2{
+        font-size: 1.5rem;
+    }
+
+    footer{
+        padding: 2rem 1rem;
+    }
+
+    footer .footer-container{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .contactos{
+        align-items: center;
+    }
+
+    .email{
+        width: 100%;
+        align-items: center;
+    }
+
+    .email-conteudo{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .email-campos{
+        width: 100%;
+        max-width: 400px;
+    }
+
+    footer input{
+        width: 100%;
+        padding: 0.6rem;
+    }
+
+    .email textarea{
+        width: 100%;
+        max-width: 400px;
+        min-height: 120px;
+    }
+
+    footer button{
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
 
     footer h1{
-        font-size: .8rem;
-            margin: 0;
+        font-size: 1.2rem;
     }
 
     footer p{
-        font-size: .8rem;
-    }
-
-    .email-linha{
-        flex-direction: column;
+        font-size: 0.9rem;
     }
 
     .direitos p{
