@@ -140,6 +140,7 @@ ul{
 
 .investigacao-main p{
     font-size: 1.1rem;
+    display: none;
 }
 
 
@@ -322,6 +323,40 @@ footer input{
     font-size:0.75rem;
 }
 
+.envio-erro{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    position: sticky;
+    bottom: 20%;
+    margin: -300px 0;
+    left: 40%;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--cor-branco);
+    padding: .5rem;
+    display: none;
+}
+
+.envio-sucesso{
+    background-color: #04AA56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    position: sticky;
+    bottom: 20%;
+    margin: -300px 0;
+    left: 40%;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--cor-branco);
+    padding: .5rem;
+    display: none;
+}
+
 /*MEDIA QUERIES TABLET*/
 
 @media (max-width: 1350px){
@@ -342,7 +377,7 @@ footer input{
 
     .objetivo h2, .missao h2{font-size: 3.5rem ;}
     .objetivo p, .missao p{font-size: 1.7rem;}
-
+    
     .footer-container{
         width: 80%;
         gap: 1rem;
@@ -360,7 +395,7 @@ footer input{
     display: none;
 
     }
-
+    
     h1{
         font-size: 1.5rem;
         margin-left:2rem ;
@@ -380,8 +415,8 @@ footer input{
     .menu-icon{
         display: block;
     }
-
-
+    
+    
     ul{
         display: none;
         flex-direction: column;
@@ -394,7 +429,7 @@ footer input{
         gap: 1rem;
         padding: 1rem 0;
     }
-
+    
     #menu-toggle:checked ~ ul{
         display: flex;
     }
@@ -473,13 +508,26 @@ footer input{
     footer h1{
         font-size: 1.2rem;
     }
-
+    
     footer p{
         font-size: 0.9rem;
     }
-
+    
     .direitos p{
         font-size: 0.5rem;
-    }
+    }    
+}    
+.scroll-to-top {
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   opacity: 70%;
+   font-size: 40px;
+   color:#666;
+   background:rgba(25, 6, 133, 0.61);
 
 }
+

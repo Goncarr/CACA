@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centro Académico Clínico dos Açores-CACA</title>
+<script src="../index.js" async></script>
 </head>
 
 <body>
@@ -36,6 +38,7 @@
 </header>
 
 <!-- MISSÃO -->
+ 
 <div class="missao">
     <div id="Missao"></div>
     <h2>A nossa Missão</h2>
@@ -63,24 +66,24 @@
         <img src="imagens/investigacao.png" alt="Coisa">
         <p>14 novembro 2025 - 12 dezembro 2025</p>
         <h2>Inteligência Artificial em Saúde</h2>
-        <p>Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
-        <button>Saber Mais</button>
+        <button id="investigacaoBotao">Saber Mais</button>
+        <p id="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
 
     </div>
         <div class="investigacao-contentor">
         <img src="imagens/investigacao.png" alt="Coisa">
         <p>14 novembro 2025 - 12 dezembro 2025</p>
         <h2>Inteligência Artificial em Saúde</h2>
-        <p>Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
-        <button>Saber Mais</button>
+        <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
+        <button name="investigacaoBotao">Saber Mais</button>
 
     </div>
         <div class="investigacao-contentor">
         <img src="imagens/investigacao.png" alt="Coisa">
         <p>14 novembro 2025 - 12 dezembro 2025</p>
         <h2>Inteligência Artificial em Saúde</h2>
-        <p>Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
-        <button>Saber Mais</button>
+        <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
+        <button name="investigacaoBotao">Saber Mais</button>
 
     </div>
 </div>
@@ -125,6 +128,7 @@
 
 <!-- FOOTER -->
 
+
 <footer>
     <div id="Contactos"></div>
     <div class="footer-container">
@@ -139,23 +143,23 @@
 
         <div class="email-conteudo">
             <div class="email-campos">
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <button>Enviar Mensagem</button>
+                <input id="nome" type="text" placeholder="Nome">
+                <input id="email" type="email" placeholder="Email">
+                <button onclick="sendEmail()">Enviar Mensagem</button>
             </div>
 
-            <textarea placeholder="Escreva a sua mensagem aqui..."></textarea>
+            <textarea id="mensagem" placeholder="Escreva a sua mensagem aqui..."></textarea>
         </div>
     </div>
-
 </footer>
     <div class="direitos">
         <p>© 2026 Centro Académico Clinico dos Açores. Todos os direitos reservados.<br>
             Financiando pela Universidade dos Açores<br>
             https://fct.uac.pt/</p>
-    </div>
-
-
+        </div>
+    <div class="envio-erro">Mensagem enviada com sucesso</div>
+    <div class="envio-sucesso">Mensagem enviada com sucesso</div>
+    <button class="scroll-to-top"><i class="fa fa-arrow-up"></i></button>
 </body>
 
 </html>
