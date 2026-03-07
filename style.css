@@ -312,12 +312,14 @@ li a:hover::before{
 
 .conquistas{
     display: flex;
-    max-width: 80%;
-    flex-direction: column;
-    margin: 2rem auto;
-    padding: 2rem;
+    justify-content: center;
+    max-width:69%;
+    flex-direction:column;
+    margin: 1rem auto;
+    padding: 1rem;
     color: var(--cor-azul);
     border: solid 0.5rem var(--cor-azul);
+ 
 }
 
 .grid {
@@ -650,19 +652,26 @@ footer input{
     transition: all 0.3s ease;
     
 }
-.mychart{
-max-width: 50px;
-height: 50px;
-padding: 10px;
-margin: 0 auto;
-max-height: 100px;
-}
-.mychart .chart_types{
-    text-align: center;
-    margin-bottom: 30px;
+.chart{
 
+max-width: 150px;
+height: 200px;
+padding: 20px;
+margin: 0 auto;
+max-height: 2em;
 }
-.mychart .chart_types button{
+.chart .chart_types{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20em;
+}
+
+.chart .chart_types button{
     padding: 2em 3em;
-   
+    font-weight: bold;
+    font-size: 20em;
+    background-size: cover;
+
 }

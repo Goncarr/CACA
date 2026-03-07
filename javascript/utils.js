@@ -1,5 +1,6 @@
 const scrollbutton = document.querySelector(".scroll-to-top");
 const ctx = document.getElementById("myChart");
+const something= document.getElementById(".mychart");
 let myChart;
 let jsonData;
 
@@ -13,9 +14,6 @@ fetch('utils/data.json')
   .then(function (data) {
     jsonData = data;
     Createchart(data, "bar");
-  })
-  .catch(function (error) {
-    console.error(error);
   });
 
 
@@ -38,7 +36,7 @@ function Createchart(data, type) {
       labels: data.map((row) => row.month),
       datasets: [
         {
-          label: "# of Votes",
+          label: "Investigações",
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -47,7 +45,7 @@ function Createchart(data, type) {
     options: {
       scales: {
         y: {
-          beginAtZero: true,
+  
         },
       },
     },
