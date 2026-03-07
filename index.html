@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centro Académico Clínico dos Açores-CACA</title>
-<script src="../index.js" async></script>
+<script src="animations.js" async></script>
+<script src="form-handler.js" async></script>
+<script src="utils.js" async></script>
 </head>
 
 <body>
@@ -148,7 +150,7 @@
                 <button onclick="sendEmail()">Enviar Mensagem</button>
             </div>
 
-            <textarea id="mensagem" placeholder="Escreva a sua mensagem aqui..."></textarea>
+            <textarea id="mensagem" maxlength="450" placeholder="Escreva a sua mensagem aqui..."></textarea>
         </div>
     </div>
 </footer>
@@ -160,6 +162,8 @@
     <div class="envio-erro">Mensagem enviada com sucesso</div>
     <div class="envio-sucesso">Mensagem enviada com sucesso</div>
     <button class="scroll-to-top"><i class="fa fa-arrow-up"></i></button>
+
+
 </body>
 
 </html>

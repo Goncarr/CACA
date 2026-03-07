@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     max-width: 1920px;
     margin: 0 auto;
@@ -62,6 +66,7 @@ header{
     justify-content: center;
     align-items: center;
     background-color: var(--cor-branco);
+    box-shadow: 3px 0 3px var(--cor-preto);
 }
 
 .header-container{
@@ -97,6 +102,25 @@ ul{
     margin-left: auto;
     padding-right: 0;
     flex-wrap: wrap;
+}
+
+li{
+    position:relative;
+}
+
+li a::before{
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--cor-preto);
+    transition: width 0.3s ease;
+}
+
+li a:hover::before{
+    width: 100%;
 }
 
 /*MISSAO E OBJETIVO*/
@@ -173,6 +197,7 @@ ul{
     font-size: 1.5rem;
     border-radius: 10px;
     justify-content: center;
+    cursor: pointer;
 }
 
 .investigacao-contentor h2{
@@ -256,6 +281,7 @@ footer button{
     font-size: 1.3rem;
     border: 0;
     color: var(--cor-preto);
+    cursor: pointer;
 }
 
 .mensagem input{
@@ -518,16 +544,15 @@ footer input{
     }    
 }    
 .scroll-to-top {
-   position: fixed;
+   position:fixed;
    bottom: 20px;
    right: 20px;
-   border-radius: 50%;
+   border: black solid 2px;
    width: 100px;
    height: 100px;
-   opacity: 70%;
    font-size: 40px;
-   color:#666;
-   background:rgba(25, 6, 133, 0.61);
+   color: #bbb la;;
+   background:var(--cor--amarelo);
 
 }
 
