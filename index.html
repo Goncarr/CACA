@@ -8,39 +8,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centro Académico Clínico dos Açores-CACA</title>
-<script src="animations.js" async></script>
-<script src="form-handler.js" async></script>
-<script src="utils.js" async></script>
 </head>
 
 <body>
-<header>
-
-<!-- CABEÇALHO -->
-
-    <div class="header-container">
-        <div class="logotipo-mobile">
-            <img src="imagens/logotipo-mobile.png" alt="Logotipo CACA">
-        </div>
-        <div class="logotipo">
-            <img src="imagens/logotipo.png" alt="Logotipo CACA">
-        </div>
+    <header>
         
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">☰</label>
-      
-        <ul>
-            <li><a href="#Missao">Missão</a></li>
-            <li><a href="#Investigacao">Investigação</a></li>
-            <li><a href="#Parcerias">Parcerias</a></li>
-            <li><a href="#Oportunidades">Oportunidades</a></li>
+        <!-- CABEÇALHO -->
+        
+        <div class="header-container">
+            <div class="logotipo-mobile">
+                <img src="imagens/logotipo-mobile.png" alt="Logotipo CACA">
+            </div>
+            <div class="logotipo">
+                <img src="imagens/logotipo.png" alt="Logotipo CACA">
+            </div>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">☰</label>
+            
+            <ul>
+                <li><a href="#Missao">Missão</a></li>
+                <li><a href="#Investigacao">Investigação</a></li>
+                <li><a href="#Parcerias">Parcerias</a></li>
+                <li><a href="#Oportunidades">Oportunidades</a></li>
             <li><a href="#Contactos">Contactos</a></li>
         </ul>
     </div>
 </header>
 
 <!-- MISSÃO -->
- 
+
 <div class="missao">
     <div id="Missao"></div>
     <h2>A nossa Missão</h2>
@@ -63,31 +60,42 @@
 <h1>Formação e Ensino</h1>
 
 <div class="investigacao-main">
-
-    <div class="investigacao-contentor">
-        <img src="imagens/investigacao.png" alt="Coisa">
-        <p>14 novembro 2025 - 12 dezembro 2025</p>
-        <h2>Inteligência Artificial em Saúde</h2>
-        <button id="investigacaoBotao">Saber Mais</button>
-        <p id="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
-
+    
+    <button class="prev" onclick="moveSlide(-1)"></button>
+    <div class="investigacao-viewport">
+        <div class="investigacao-track" id="track">
+            <div class="investigacao-contentor">
+                <img src="imagens/investigacao.png" alt="Coisa">
+                <p>14 novembro 2025 - 12 dezembro 2025</p>
+                <h2>Inteligência Artificial em Saúde</h2>
+                <button id="investigacaoBotao">Saber Mais</button>
+                <p id="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
+            </div>
+            <div class="investigacao-contentor">
+                <img src="imagens/investigacao.png" alt="Coisa">
+                <p>14 novembro 2025 - 12 dezembro 2025</p>
+                <h2>Inteligência Artificial em Saúde</h2>
+                <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
+                <button name="investigacaoBotao">Saber Mais</button>
+            </div>
+            <div class="investigacao-contentor">
+                <img src="imagens/investigacao.png" alt="Coisa">
+                <p>14 novembro 2025 - 12 dezembro 2025</p>
+                <h2>Inteligência Artificial em Saúde</h2>
+                <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
+                <button name="investigacaoBotao">Saber Mais</button>
+            </div>
+            <div class="investigacao-contentor">
+                <img src="imagens/investigacao.png" alt="Coisa">
+                <p>14 novembro 2025 - 12 dezembro 2025</p>
+                <h2>Medicina</h2>
+                <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
+                <button name="investigacaoBotao">Saber Mais</button>
+            </div>
+            
+        </div>
     </div>
-        <div class="investigacao-contentor">
-        <img src="imagens/investigacao.png" alt="Coisa">
-        <p>14 novembro 2025 - 12 dezembro 2025</p>
-        <h2>Inteligência Artificial em Saúde</h2>
-        <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
-        <button name="investigacaoBotao">Saber Mais</button>
-
-    </div>
-        <div class="investigacao-contentor">
-        <img src="imagens/investigacao.png" alt="Coisa">
-        <p>14 novembro 2025 - 12 dezembro 2025</p>
-        <h2>Inteligência Artificial em Saúde</h2>
-        <p name="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
-        <button name="investigacaoBotao">Saber Mais</button>
-
-    </div>
+    <button class="next" onclick="moveSlide(1)">></button>
 </div>
 
 <!-- PARCERIAS -->
@@ -96,45 +104,57 @@
 <h1>Parcerias e Trabalho Desenvolvido</h1>
 
 <div class="parcerias">
-    <img src="imagens/uac.png" alt="Universidade dos Açores">
-    <img src="imagens/associacao_doentes.png" alt="Associação Doentes">
-    <img src="imagens/cuf.png" alt="Cuf">
-    <img src="imagens/hospital.png" alt="Hospital Divini Espirito Santo">
+    <button class="parceria-btn parceria-next" aria-label="Próximo parceiro">&#8250;</button>
+    
+    <div class="parceria-slide active">
+        <img src="imagens/uac.png" alt="Univercidade dos Açores">
+        <p class= "parceria-nome">Universidade dos Açores</p>
+    </div>
+    
+    <div class = "parceria-slide">
+        <img src="imagens/associacao_doentes.png" alt="Associação de doentes">
+        <p class="parceria-nome">Associação de Doentes de Dor Crónia dos Açores</p>
+    </div>
+
+    </div>
+    <div class="parceria-slide">
+        <img scr="imagens/cuf.png" alt="CUF">
+        <p class="parceria-nome">CUF</p>
+    </div>
+    
+    <div class="parceria-slide">
+        <img scr="imagens/hospital.png" alt="Hospital do Divino Espírito Santo">
+        <p class="parceria-nome">Hospital do Divino Espírito Santo</p>
+    </div>
+
+    <div class="parceria-indicadores">
+        <span class="parceria-dot active" aria-label="Parceiro1"></span></span>
+        <span class="parceria-dot"aria-label="Parceiro2"></span>
+        <span class="parceria-dot"aria-label="Parceiro3"></span>
+        <span class="parceria-dot"aria-label="Parceiro4"></span>
+    </div>
+    
 </div>
 
 <div class="conquistas">
-    <div  id="Oportunidades" ></div>
-    <h2>Em 2026, com a ajuda destes parceiros, o Centro Académico Clinico dos Açores:</h2>
-    <div class="grid">
-        <div class="item">
-            <h1>1.</h1>
-            <p>Apoiou mais de uma dezena de investigadores</p>
-        </div>
-
-        <div class="item">
-            <h1>2.</h1>
-            <p>Abriu €10000 em apoios em diversas áreas de investigação no arquipélago todo</p>
-        </div>
-
-        <div class="item">
-            <h1>3.</h1>
-            <p>Realizou 8 concursos de apoio à investigação</p>
-        </div>
-
-        <div class="item">
-            <h1>4.</h1>
-            <p>Garantiu a conclusão de 6 projetos regionais</p>
+    <div class="chart">
+        <div class="chart_types">
+                <button onclick="setChartType('bar')">bars1</button>
+                <button onclick="setChartType('bar')">bar2</button>
+                <button onclick="setChartType('bar')">bar3</button>
+           <div>
+            <canvas id="myChart"></canvas>
+           </div>
         </div>
     </div>
 </div>
-
 <!-- FOOTER -->
 
 
 <footer>
     <div id="Contactos"></div>
     <div class="footer-container">
-    <div class="contactos">
+        <div class="contactos">
         <h1>Contactos</h1>
         <p>Email: 2acaca@uac.pt</p>
         <p>Telefone: 250 620 910</p>
@@ -142,14 +162,14 @@
     </div>
     <div class="email">
         <h1>Envie Um Email</h1>
-
+        
         <div class="email-conteudo">
             <div class="email-campos">
                 <input id="nome" type="text" placeholder="Nome">
                 <input id="email" type="email" placeholder="Email">
                 <button onclick="sendEmail()">Enviar Mensagem</button>
             </div>
-
+            
             <textarea id="mensagem" maxlength="450" placeholder="Escreva a sua mensagem aqui..."></textarea>
         </div>
     </div>
@@ -163,6 +183,10 @@
     <div class="envio-sucesso">Mensagem enviada com sucesso</div>
     <button class="scroll-to-top"><i class="fa fa-arrow-up"></i></button>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="javascript/utils.js" defer></script>
+    <script src="javascript/form-handler.js" defer></script>
+    <script src="javascript/animations.js" defer></script>
 
 </body>
 

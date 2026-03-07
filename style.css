@@ -60,6 +60,7 @@ a{
 /*CABEÇALHO*/
 
 header{
+    z-index: 100;
     position: sticky;
     top: 0;
     display: flex;
@@ -169,7 +170,7 @@ li a:hover::before{
 
 
 .investigacao-contentor{
-    flex: 1 1 300px;
+    flex: 0 0 33.333%;
     max-width: 500px;
     margin: 0 1rem;
     display: flex;
@@ -187,18 +188,37 @@ li a:hover::before{
     height: auto;
 }
 
+.investigacao-viewport {
+    overflow: hidden; 
+    width: 90%;
+}
+
+.investigacao-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
 .investigacao-contentor button{
     display: flex;
     background-color: var(--cor-azul);
     color: var(--cor-branco);
-    border: solid 1rem;
+    border: solid 0;
     align-items: center;
     font-size: 1.5rem;
-    border-radius: 10px;
     justify-content: center;
     cursor: pointer;
 }
+.investigacao-contentor button:hover{
+    background-color: #ffcb21;
+    transition: ease .3s;
+    color: var(--cor-azul);
+}
+
+.investigacao-main button{
+    min-width: 1rem;
+    min-height: 2rem;
+}
+
 
 .investigacao-contentor h2{
     color: var(--cor-azul);
@@ -208,17 +228,86 @@ li a:hover::before{
 
 .parcerias{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    gap: 4rem;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+    position: relative;
+    min-height: 200px;
+}
+
+.parceria-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeInParceria 0.5s ease;
+}
+
+.parceria-slide.active{
+    display: flex;
+}
+
+
+@keyframes fadeInParceria {
+    from{opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
 }
 
 .parcerias img {
-    width: clamp(100px, 15vw, 250px);
+    width: clamp(120px, 18vw, 280px);
     height: auto;
 }
+
+.parceria-nome{
+    font-size: 1.1rem !important;
+    color: var(--cor-azul);
+    font-weight: bold;
+    text-align: center;
+}
+
+.parceria-btn{
+    background: var(--cor-azul);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+    flex-shrink: 0;
+}
+
+.parceria-btn:hover{
+    background: var(--cor-botao);
+    transform: scale(1.1);
+}
+
+.parceria-indicadores {
+    position: absolute;
+    bottom: 0.3rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.parceria-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #808080;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.parceria-dot.active {
+    background: var(--cor-azul)
+}
+
+
 /*CONQUISTAS*/
 
 .conquistas{
@@ -246,11 +335,9 @@ li a:hover::before{
 .conquistas h2 {
     color: var(--cor-azul);
     font-size: 30px;
-    margin: 0 0 15px 0;
-    font-weight:bold;
-}
-.item p {
-    color: var(--cor-conquista--cinzento);
+    justify-content: center;
+    align-items: center;
+    padding: (--cor-conquista--cinzento);
     line-height: 1.6;
 }
 
@@ -548,11 +635,34 @@ footer input{
    bottom: 20px;
    right: 20px;
    border: black solid 2px;
+   border-radius: 30%;
    width: 100px;
    height: 100px;
    font-size: 40px;
    color: #bbb la;;
-   background:var(--cor--amarelo);
-
+   background:var(--cor-azul);
+   cursor: pointer;
+   color:var(--cor--amarelo);
 }
 
+.scroll-to-top:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    
+}
+.mychart{
+max-width: 50px;
+height: 50px;
+padding: 10px;
+margin: 0 auto;
+max-height: 100px;
+}
+.mychart .chart_types{
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+.mychart .chart_types button{
+    padding: 2em 3em;
+   
+}
