@@ -2,9 +2,8 @@ const scrollbutton = document.querySelector(".scroll-to-top");
 const ctx = document.getElementById("myChart");
 let myChart;
 let jsonData;
-let currentChartType = "line"; // Guarda o tipo de gráfico atual
+let currentChartType = "line"; 
 
-// 1. Função para carregar qualquer ficheiro JSON
 function loadData(jsonUrl) {
   fetch(jsonUrl)
     .then(function (response) {
@@ -14,15 +13,14 @@ function loadData(jsonUrl) {
       throw new Error(`Falha ao carregar os dados de: ${jsonUrl}`);
     })
     .then(function (data) {
-      jsonData = data; // Atualiza os dados globais
-      Createchart(jsonData, currentChartType); // Redesenha o gráfico com os novos dados
+      jsonData = data; 
+      Createchart(jsonData, currentChartType); 
     })
     .catch(function (error) {
       console.error(error);
     });
 }
 
-// 2. Função para mudar o tipo de gráfico (mantendo os dados atuais)
 function setChartType(chartType) {
   currentChartType = chartType;
   if (jsonData) {
@@ -30,14 +28,13 @@ function setChartType(chartType) {
   }
 }
 
-// 3. Função para criar/atualizar o gráfico
 function Createchart(data, type) {
   if (!ctx) {
     console.warn("Canvas element not found: #myChart");
     return;
   }
 
-  // Destrói o gráfico anterior antes de criar um novo para evitar sobreposição
+  
   if (myChart) {
     myChart.destroy();
   }
@@ -48,7 +45,7 @@ function Createchart(data, type) {
       labels: data.map((row) => row.month),
       datasets: [
         {
-          label: "Investigações", 
+          label: "n de investigacoes/ por vez (em cada ano)", 
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -57,14 +54,13 @@ function Createchart(data, type) {
     options: {
       scales: {
         y: {
-          beginAtZero: true // Boa prática para gráficos de barras/linhas
+          beginAtZero: true 
         },
       },
     },
   });
 }
 
-// Inicializa o gráfico com o primeiro ficheiro quando a página carrega
 loadData('utils/data.json');
 
 const  refreshbuttonVisibility = () =>{
