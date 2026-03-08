@@ -343,7 +343,7 @@ li a:hover::before{
     color:var(--cor-branco);
     border: none;
     background-color: var(--cor-azul);
-    font-size: 2.1em;
+    font-size: 2.6em;
     padding-inline: .5em;
     
 
@@ -526,6 +526,16 @@ footer input{
         width: 80%;
         gap: 1rem;
     }
+    .conquistas button{
+    margin: 1em;
+    color:var(--cor-branco);
+    border: none;
+    background-color: var(--cor-azul);
+    font-size: 1.5em;
+    padding-inline: 1em;
+    
+
+}
 
     .investigacao-viewport {
     overflow: hidden; 
@@ -604,6 +614,16 @@ footer input{
     .item{
         text-align: center;
     }
+    .conquistas button{
+    margin: .25em;
+    color:var(--cor-branco);
+    border: none;
+    background-color: var(--cor-azul);
+    font-size: .05em;
+    padding-inline: .5em;
+    
+
+}
 
     .conquistas h2{
         font-size: 1.5rem;
@@ -642,7 +662,16 @@ footer input{
         width: 100%;
         max-width: 400px;
     }
+    .conquistas button{
+    margin: 1em;
+    color:var(--cor-branco);
+    border: none;
+    background-color: var(--cor-azul);
+    font-size: 1.2685em;
+    padding-inline: .5em;
+    
 
+}
     footer input{
         width: 100%;
         padding: 0.6rem;
@@ -703,14 +732,7 @@ max-height: 2em;
 .chart .chart_types{
     display:flex;
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2em;
+    font-size:.15em;
 }
 
-.chart .chart_types button{
-    padding: 2em 3em;
-    font-weight: bold;
-    font-size: 2em;
-    background-size: cover;
 
-}

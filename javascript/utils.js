@@ -3,7 +3,6 @@ const ctx = document.getElementById("myChart");
 let myChart;
 let jsonData;
 let currentChartType = "line";
-
 function loadData(jsonUrl) {
   fetch(jsonUrl)
     .then(function (response) {
