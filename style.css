@@ -327,8 +327,8 @@ li a:hover::before{
 
 .conquistas{
     display: flex;
+    align-content: center;
     justify-content: center;
-    max-width:76%;
     max-width:76%;
     flex-direction:column;
     margin: 1rem auto;
@@ -339,7 +339,7 @@ li a:hover::before{
 }
 
 .conquistas button{
-   margin-inline: 5em;
+    margin: 1em;
     color:var(--cor-branco);
     border: none;
     background-color: var(--cor-azul);
@@ -702,10 +702,8 @@ max-height: 2em;
 }
 .chart .chart_types{
     display:flex;
-    text-align: start;
-    text-align: start;
+    text-align: center;
     margin-bottom: 20px;
-    font-size: 2em;
     font-size: 2em;
 }
 
