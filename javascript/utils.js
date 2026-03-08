@@ -1,27 +1,33 @@
 const scrollbutton = document.querySelector(".scroll-to-top");
 const ctx = document.getElementById("myChart");
-const something= document.getElementById(".mychart");
 let myChart;
 let jsonData;
+let currentChartType = "line"; 
 
-fetch('utils/data.json')
-  .then(function (response) {
-    if (response.ok) {
-      return response.json();
-    }
-    throw new Error("Falha ao carregar os dados do gráfico");
-  })
-  .then(function (data) {
-    jsonData = data;
-    Createchart(data, "bar");
-  });
 
+
+function loadData(jsonUrl) {
+  fetch(jsonUrl)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(`Falha ao carregar os dados de: ${jsonUrl}`);
+    })
+    .then(function (data) {
+      jsonData = data; 
+      Createchart(jsonData, currentChartType); 
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
 
 function setChartType(chartType) {
-  if (myChart) {
-    myChart.destroy();
+  currentChartType = chartType;
+  if (jsonData) {
+    Createchart(jsonData, currentChartType);
   }
-  Createchart(jsonData, chartType);
 }
 
 function Createchart(data, type) {
@@ -30,13 +36,18 @@ function Createchart(data, type) {
     return;
   }
 
+  
+  if (myChart) {
+    myChart.destroy();
+  }
+
   myChart = new Chart(ctx, {
     type: type,
     data: {
       labels: data.map((row) => row.month),
       datasets: [
         {
-          label: "Investigações",
+          label: "n de investigacoes/ por vez (em cada ano)", 
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -45,12 +56,14 @@ function Createchart(data, type) {
     options: {
       scales: {
         y: {
-  
+          beginAtZero: true 
         },
       },
     },
   });
 }
+
+loadData('utils/data.json');
 
 const  refreshbuttonVisibility = () =>{
     if(document.documentElement.scrollTop <= 150){
