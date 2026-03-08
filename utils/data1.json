@@ -9,6 +9,10 @@
     {"month":"agosto","income":12},
     {"month":"setembro","income":12},
     {"month":"outubro","income":10},
+<<<<<<< HEAD
     {"month":"novembro","income":40},
+=======
+    {"month":"novembro","income":10},
+>>>>>>> 44388f3ddd43acb4b176acded8e020adf62020be
     {"month":"dezembro","income":40}
 ]
