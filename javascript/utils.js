@@ -2,9 +2,7 @@ const scrollbutton = document.querySelector(".scroll-to-top");
 const ctx = document.getElementById("myChart");
 let myChart;
 let jsonData;
-let currentChartType = "line"; 
-
-
+let currentChartType = "line";
 
 function loadData(jsonUrl) {
   fetch(jsonUrl)
@@ -15,24 +13,8 @@ function loadData(jsonUrl) {
       throw new Error(`Falha ao carregar os dados de: ${jsonUrl}`);
     })
     .then(function (data) {
-      jsonData = data; 
-      Createchart(jsonData, currentChartType); 
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-}
-function loadData(jsonUrl) {
-  fetch(jsonUrl)
-    .then(function (response) {
-      if (response.ok) {
-        return response.json();
-      }
-      throw new Error(`Falha ao carregar os dados de: ${jsonUrl}`);
-    })
-    .then(function (data) {
-      jsonData = data; 
-      Createchart(jsonData, currentChartType); 
+      jsonData = data;
+      Createchart(jsonData, currentChartType);
     })
     .catch(function (error) {
       console.error(error);
@@ -40,9 +22,6 @@ function loadData(jsonUrl) {
 }
 
 function setChartType(chartType) {
-  currentChartType = chartType;
-  if (jsonData) {
-    Createchart(jsonData, currentChartType);
   currentChartType = chartType;
   if (jsonData) {
     Createchart(jsonData, currentChartType);
@@ -55,12 +34,6 @@ function Createchart(data, type) {
     return;
   }
 
-  
-  if (myChart) {
-    myChart.destroy();
-  }
-
-  
   if (myChart) {
     myChart.destroy();
   }
@@ -71,8 +44,7 @@ function Createchart(data, type) {
       labels: data.map((row) => row.month),
       datasets: [
         {
-          label: "n de investigacoes/ por vez (em cada ano)", 
-          label: "n de investigacoes/ por vez (em cada ano)", 
+          label: "n de investigacoes/ por vez (em cada ano)",
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -81,7 +53,7 @@ function Createchart(data, type) {
     options: {
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
         },
       },
     },
@@ -90,48 +62,43 @@ function Createchart(data, type) {
 
 loadData('utils/data.json');
 
-loadData('utils/data.json');
-
-const  refreshbuttonVisibility = () =>{
-    if(document.documentElement.scrollTop <= 150){
-        scrollbutton.style.display="none";
-    }else{
-        scrollbutton.style.display="block";
-    }
+const refreshbuttonVisibility = () => {
+  if (document.documentElement.scrollTop <= 150) {
+    scrollbutton.style.display = "none";
+  } else {
+    scrollbutton.style.display = "block";
+  }
 };
 
 refreshbuttonVisibility();
- 
-scrollbutton.addEventListener("click",() => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    
 
+scrollbutton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
-document.addEventListener("scroll",(e)=> {
-    refreshbuttonVisibility();
+document.addEventListener("scroll", () => {
+  refreshbuttonVisibility();
 });
 
+// Investigação
+let currentIndex = 0;
 
-//investigacao
-let currentIndex = 0
+function moveSlide(direction) {
+  const track = document.getElementById('track');
+  const totalSlides = document.querySelectorAll(".investigacao-contentor").length;
 
-  function moveSlide(direction){
-    const track = document.getElementById('track');
-    const totalSlides = document.querySelectorAll(".investigacao-contentor").length;
-    
-    const maxIndex = totalSlides - 3;
+  const maxIndex = totalSlides - 3;
+  currentIndex += direction;
 
-    currentIndex += direction;
-    
-    if (currentIndex < 0){
-        currentIndex = maxIndex;
-    }
-    else if(currentIndex > maxIndex){
-        currentIndex = 0;
-    }
-    const percentage = currentIndex * 33.333;
-    track.style.transform = `translateX(-${percentage}%)`;
+  if (currentIndex < 0) {
+    currentIndex = maxIndex;
+  } else if (currentIndex > maxIndex) {
+    currentIndex = 0;
   }
+
+  const percentage = currentIndex * 33.333;
+  track.style.transform = `translateX(-${percentage}%)`;
 }
