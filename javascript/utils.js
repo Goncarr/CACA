@@ -86,10 +86,10 @@ let currentIndex = 0
     currentIndex += direction;
     
     if (currentIndex < 0){
-        currentIndex = 0
+        currentIndex = maxIndex;
     }
     else if(currentIndex > maxIndex){
-        currentIndex = maxIndex;
+        currentIndex = 0;
     }
     const percentage = currentIndex * 33.333;
     track.style.transform = `translateX(-${percentage}%)`;
