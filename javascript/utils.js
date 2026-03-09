@@ -60,8 +60,6 @@ function Createchart(data, type) {
   });
 }
 
-loadData('utils/data.json');
-
 const refreshbuttonVisibility = () => {
   if (document.documentElement.scrollTop <= 150) {
     scrollbutton.style.display = "none";
@@ -84,21 +82,42 @@ document.addEventListener("scroll", () => {
 });
 
 // Investigação
+
 let currentIndex = 0;
 
-function moveSlide(direction) {
-  const track = document.getElementById('track');
-  const totalSlides = document.querySelectorAll(".investigacao-contentor").length;
-
-  const maxIndex = totalSlides - 3;
-  currentIndex += direction;
-
-  if (currentIndex < 0) {
-    currentIndex = maxIndex;
-  } else if (currentIndex > maxIndex) {
-    currentIndex = 0;
-  }
-
-  const percentage = currentIndex * 33.333;
-  track.style.transform = `translateX(-${percentage}%)`;
+function getVisibleCount() {
+  if (window.innerWidth <= 980) return 1;
+  if (window.innerWidth <= 1350) return 2;
+  return 3;
 }
+
+function updateSlider() {
+  const track = document.getElementById('track');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.investigacao-contentor');
+  const total = cards.length;
+  const visible = getVisibleCount();
+  const maxIndex = total - visible;
+
+  if (currentIndex < 0) currentIndex = maxIndex;
+  if (currentIndex > maxIndex) currentIndex = 0;
+
+  // Calcula deslocamento com base na largura real do card (inclui margens)
+  const card = cards[0];
+  const style = window.getComputedStyle(card);
+  const cardWidth = card.offsetWidth
+    + parseInt(style.marginLeft)
+    + parseInt(style.marginRight);
+
+  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+function moveSlide(direction) {
+  currentIndex += direction;
+  updateSlider();
+}
+
+// Recalcula posição ao redimensionar para não ficar desalinhado
+window.addEventListener('resize', updateSlider);
+loadData('utils/data2025.json');

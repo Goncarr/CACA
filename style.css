@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
 
+/* RESET & BASE */
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Kadwa', serif;
@@ -9,57 +10,45 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     max-width: 1920px;
     margin: 0 auto;
 }
 
-h1{
+h1 {
     font-size: 5rem;
     margin: 2rem 6rem;
-    
 }
 
-p{
+p {
     font-size: 1.5rem;
 }
 
-#menu-toggle{
-    display: none;
-}
-
-.menu-icon{
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-
-a{
+a {
     text-decoration: none;
     color: var(--cor-preto);
 }
 
-/*VARIVEIS UTILIZADAS*/
+/*VARIÁVEIS*/
 
-:root{
-    --cor-azul: #1B3577;
-    --cor-branco: #FFFFFF;
-    --cor-preto: #000000;
-    --cor-conquista--cinzento: #333;
-    --cor-botao: #3865D7;
-    --cor-input--cinzento: #808080;
-    --cor--amarelo: #FFCB21;
-    
+
+:root {
+    --cor-azul:               #1B3577;
+    --cor-branco:             #FFFFFF;
+    --cor-preto:              #000000;
+    --cor-conquista--cinzento:#333;
+    --cor-botao:              #3865D7;
+    --cor-input--cinzento:    #808080;
+    --cor--amarelo:           #FFCB21;
 }
 
 /*CABEÇALHO*/
 
-header{
+header {
     z-index: 100;
     position: sticky;
     top: 0;
@@ -70,7 +59,7 @@ header{
     box-shadow: 3px 0 3px var(--cor-preto);
 }
 
-.header-container{
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,24 +67,29 @@ header{
     margin: 1rem 0;
 }
 
-#Missao, #Investigacao, #Parcerias,#Oportunidades,#Contactos {
-            display: block;
-            position: relative;
-            top: -500px;
-            visibility: hidden;
-        }
-
-.logotipo-mobile{
-    display: none;
-
-}
-
-.logotipo img{
+.logotipo img {
     width: 334px;
     height: 128px;
 }
 
-ul{
+.logotipo-mobile {
+    display: none;
+}
+
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Nav links */
+
+ul {
     display: flex;
     list-style: none;
     font-size: 1.5rem;
@@ -105,11 +99,11 @@ ul{
     flex-wrap: wrap;
 }
 
-li{
-    position:relative;
+li {
+    position: relative;
 }
 
-li a::before{
+li a::before {
     content: "";
     position: absolute;
     bottom: 5px;
@@ -120,12 +114,22 @@ li a::before{
     transition: width 0.3s ease;
 }
 
-li a:hover::before{
+li a:hover::before {
     width: 100%;
 }
 
-/*MISSAO E OBJETIVO*/
-.missao, .objetivo{
+/* Scroll anchors */
+
+#Missao, #Investigacao, #Parcerias, #Oportunidades, #Contactos {
+    display: block;
+    position: relative;
+    top: -500px;
+    visibility: hidden;
+}
+
+/*MISSÃO & OBJETIVO*/
+
+.missao, .objetivo {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -135,61 +139,48 @@ li a:hover::before{
     color: var(--cor-branco);
 }
 
-.missao{
-    background-image: url(imagens/paisagem1.png);
-    
+.missao {
+    background-image: url(imagens/missao-objetivo/paisagem1.png);
 }
 
-.objetivo{
-    background-image: url(imagens/paisagem2.png);
+.objetivo {
+    background-image: url(imagens/missao-objetivo/paisagem2.png);
 }
 
-.objetivo h2, .missao h2{
+.objetivo h2, .missao h2 {
     font-size: 4rem;
-    
 }
 
-.objetivo p, .missao p{
+.objetivo p, .missao p {
     font-size: 2.2rem;
 }
 
 /*INVESTIGAÇÃO*/
 
-.investigacao-main{
+.investigacao-main {
     display: flex;
-    flex-wrap:wrap;
-    gap: 2rem;
+    flex-wrap: wrap;
+    background-image: url("imagens/missao-objetivo/paisagem2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     background-color: var(--cor-azul);
+    gap: 2rem;
     justify-content: center;
     align-items: center;
 }
 
-.investigacao-main p{
+.investigacao-main p {
     font-size: 1.1rem;
-    display: none;
 }
 
-
-.investigacao-contentor{
-    flex: 0 0 calc(33.333% - 2rem); /* 3 cards on desktop minus margins */
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--cor-branco);
-    margin: 1rem;
-    padding: 1.5rem;
-    box-sizing: border-box;
-}
-
-.investigacao-contentor img{
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: auto;
+.investigacao-main button {
+    min-width: 1rem;
+    min-height: 2rem;
 }
 
 .investigacao-viewport {
-    overflow: hidden; 
+    overflow: hidden;
     width: 83%;
 }
 
@@ -199,20 +190,33 @@ li a:hover::before{
     align-items: stretch;
 }
 
-.prev, .next{
-    font-size: 5rem;
-    background-color: transparent;
-    color: var(--cor-branco);
-    border: none;
-    cursor: pointer;
+.investigacao-contentor {
+    flex: 0 0 calc(33.333% - 2rem);
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-branco);
+    margin: 1rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 
-.prev:hover, .next:hover{
-    transform: scale(1.1);
-    transition: ease 0.2s;
+.investigacao-contentor img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 50%;
 }
 
-.investigacao-contentor button{
+.investigacao-contentor p{
+    margin-top: auto;
+}
+
+.investigacao-contentor h2 {
+    color: var(--cor-azul);
+}
+
+.investigacao-contentor button {
     display: flex;
     background-color: var(--cor-azul);
     color: var(--cor-branco);
@@ -221,27 +225,40 @@ li a:hover::before{
     font-size: 1.5rem;
     justify-content: center;
     cursor: pointer;
+    margin-top: auto;
 }
-.investigacao-contentor button:hover{
+
+.investigacao-contentor button:hover {
     background: var(--cor-botao);
     transform: scale(1.05);
     transition: .3s;
 }
 
-.investigacao-main button{
-    min-width: 1rem;
-    min-height: 2rem;
+.saberTexto {
+    font-size: 1.1rem;
+    display: none;
+    height: 10rem;
+    overflow: auto;
 }
 
+/* Prev / Next buttons */
 
+.prev, .next {
+    font-size: clamp(1rem, 5vw, 10rem);
+    background-color: transparent;
+    color: var(--cor-branco);
+    border: none;
+    cursor: pointer;
+}
 
-.investigacao-contentor h2{
-    color: var(--cor-azul);
+.prev:hover, .next:hover {
+    transform: scale(1.1);
+    transition: ease 0.2s;
 }
 
 /*PARCERIAS*/
 
-.parcerias{
+.parcerias {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -259,14 +276,13 @@ li a:hover::before{
     animation: fadeInParceria 0.5s ease;
 }
 
-.parceria-slide.active{
+.parceria-slide.active {
     display: flex;
 }
 
-
 @keyframes fadeInParceria {
-    from{opacity: 0; transform: scale(0.95);}
-    to {opacity: 1; transform: scale(1);}
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
 }
 
 .parcerias img {
@@ -274,14 +290,14 @@ li a:hover::before{
     height: auto;
 }
 
-.parceria-nome{
+.parceria-nome {
     font-size: 1.1rem !important;
     color: var(--cor-azul);
     font-weight: bold;
     text-align: center;
 }
 
-.parceria-btn{
+.parceria-btn {
     background: var(--cor-azul);
     color: #FFFFFF;
     border: none;
@@ -297,7 +313,7 @@ li a:hover::before{
     flex-shrink: 0;
 }
 
-.parceria-btn:hover{
+.parceria-btn:hover {
     background: var(--cor-botao);
     transform: scale(1.1);
 }
@@ -319,136 +335,122 @@ li a:hover::before{
 }
 
 .parceria-dot.active {
-    background: var(--cor-azul)
+    background: var(--cor-azul);
 }
-
 
 /*CONQUISTAS*/
 
-.conquistas{
+.conquistas {
+    display: flex;
+    background-image: url("imagens/missao-objetivo/paisagem2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.conquistas p{
+    color: var(--cor-branco);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.conquistas-container {
     display: flex;
     justify-content: center;
-    max-width:76%;
-    max-width:76%;
-    flex-direction:column;
-    margin: 1rem auto;
+    flex-direction: column;
     padding: 1rem;
-    color: var(--cor-azul);
-    border: solid 0.5rem var(--cor-azul);
- 
+    width: 90%;
 }
 
-.conquistas button{
-   margin-inline: 5em;
-    color:var(--cor-branco);
+.conquistas-container button {
+    color: var(--cor-branco);
     border: none;
     background-color: var(--cor-azul);
-    font-size: 2.1em;
+    font-size: clamp(.8rem, 2.6vw, 2.6rem);
     padding-inline: .5em;
-    
-
+    margin: 1rem 1rem 1rem 0;
+    cursor: pointer;
 }
-.conquistas button:hover{
+
+.conquistas-container button:hover {
     background-color: var(--cor-botao);
     transform: scale(1.1);
     transition: all .2s ease;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-}
-
-.item h1 {
-    color: var(--cor-azul);
-    font-size: 36px;
-    margin: 0 0 15px 0;
-    font-weight:bold;
-}
-.conquistas h2 {
-    color: var(--cor-azul);
-    font-size: 30px;
-    justify-content: center;
-    align-items: center;
-    padding: (--cor-conquista--cinzento);
-    line-height: 1.6;
+canvas {
+    background-color: white;
 }
 
 /*FOOTER*/
 
-footer{
-    display:flex;
+footer {
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--cor-azul);
 }
 
-footer h1{
+footer h1 {
     font-weight: bold;
     font-size: 2.25rem;
-        margin: 0;
+    margin: 0;
 }
 
-footer p{
-    font-size:1.4rem;
+footer p {
+    font-size: 1.4rem;
 }
-footer p, footer h1{
+
+footer p, footer h1 {
     color: var(--cor-branco);
 }
 
-footer button{
-    background-color:var(--cor--amarelo);
+footer button {
+    background-color: var(--cor--amarelo);
     font-size: 1.3rem;
     border: 0;
     color: var(--cor-preto);
     cursor: pointer;
 }
 
-.mensagem input{
-    display: flex;
-    max-width: 300px;
-    height: 100%;
-}
-
-footer input{
+footer input {
     width: 100%;
     font-size: 1rem;
     border: solid 2px var(--cor-input--cinzento);
     padding-left: 0.2rem;
 }
 
-.footer-container{
+.footer-container {
     margin: 1rem;
     display: flex;
     justify-content: space-between;
     width: 60%;
 }
 
-.direitos{
-    justify-content: center;
-    align-items: center;
-}
-
-.contactos{
+.contactos {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
-.email-conteudo{
+.email-conteudo {
     display: flex;
     gap: 1rem;
     align-items: stretch;
 }
 
-.email-campos{
+.email-campos {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 200px;
 }
 
-.email textarea{
+.email textarea {
     width: 300px;
     resize: none;
     padding: 0.5rem;
@@ -456,21 +458,30 @@ footer input{
     border: solid 2px var(--cor-input--cinzento);
 }
 
-.direitos{
+.mensagem input {
+    display: flex;
+    max-width: 300px;
+    height: 100%;
+}
+
+.direitos {
     background-color: var(--cor-azul);
     display: flex;
     color: var(--cor-branco);
+    justify-content: center;
     justify-items: center;
     align-items: center;
     text-align: center;
     padding: 1rem;
 }
 
-.direitos p{
-    font-size:0.75rem;
+.direitos p {
+    font-size: 0.75rem;
 }
 
-.envio-erro{
+/* Notificações de envio erro/falha */
+
+.envio-erro {
     background-color: red;
     display: flex;
     justify-content: center;
@@ -487,7 +498,7 @@ footer input{
     display: none;
 }
 
-.envio-sucesso{
+.envio-sucesso {
     background-color: #04AA56;
     display: flex;
     justify-content: center;
@@ -504,75 +515,106 @@ footer input{
     display: none;
 }
 
-/*MEDIA QUERIES TABLET*/
+/* BOTAO SCROLL TO TOP*/
 
-@media (max-width: 1350px){
-    
-    .logotipo img{
-    width: 167px;
-    height: 64px;
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: solid 2px var(--cor-branco);
+    border-radius: 5%;
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    background: var(--cor-azul);
+    cursor: pointer;
+    color: var(--cor-branco);
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/*MEDIA QUERIES — TABLET*/
+
+@media (max-width: 1350px) {
+
+    .logotipo img {
+        width: 167px;
+        height: 64px;
     }
-    
-    ul{
+
+    ul {
         font-size: 1rem;
     }
-    
-    h1{font-size:3.2rem;}
 
-    .objetivo h2, .missao h2{font-size: 3.5rem ;}
-    .objetivo p, .missao p{font-size: 1.7rem;}
-    
-    .footer-container{
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .objetivo h2, .missao h2 {
+        font-size: 3.5rem;
+    }
+
+    .objetivo p, .missao p {
+        font-size: 1.7rem;
+    }
+
+    .investigacao-viewport {
+        overflow: hidden;
+        width: 80%;
+    }
+
+    .investigacao-contentor {
+        flex: 0 0 calc(50% - 2rem);
+    }
+
+    .footer-container {
         width: 80%;
         gap: 1rem;
     }
 
-    .investigacao-viewport {
-    overflow: hidden; 
-    width: 80%;
-    }
-
-    .investigacao-contentor {
-        flex: 0 0 calc(50% - 2rem); 
-    }
-
-    .footer-container p{
+    .footer-container p {
         font-size: 1.2rem;
     }
 }
 
-/*MEDIA QUERIES MOBILE*/
+/*MEDIA QUERIES — MOBILE  (max-width: 980px)*/
 
-@media (max-width: 980px){
-    .logotipo{
-    display: none;
+@media (max-width: 980px) {
 
-    }
-    
-    h1{
+    /* Layout geral */
+
+    h1 {
         font-size: 1.5rem;
-        margin-left:2rem ;
+        margin-left: 2rem;
     }
 
-    .logotipo-mobile{
+    /* Logotipo */
+
+    .logotipo {
+        display: none;
+    }
+
+    .logotipo-mobile {
         display: block;
         width: 60px;
         height: 70px;
     }
 
-    .logotipo-mobile img{
+    .logotipo-mobile img {
         width: 60px;
         height: 70px;
     }
 
-    .menu-icon{
+    /* Navegação */
+
+    .menu-icon {
         display: block;
     }
 
-
-    
-    
-    ul{
+    ul {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -584,36 +626,45 @@ footer input{
         gap: 1rem;
         padding: 1rem 0;
     }
-    
-    #menu-toggle:checked ~ ul{
+
+    #menu-toggle:checked ~ ul {
         display: flex;
     }
 
-    .investigacao-main{
-        flex-direction: column;
+    /* Investigação */
+
+    .investigacao-main {
+        flex-direction: row;
     }
 
-    .investigacao-main p{font-size:1rem;}
-    .investigacao-main h2{font-size:1.35rem;}
-    .missao h2, .missao p{gap: 0;}
+    .investigacao-main p { font-size: 1rem; }
+    .investigacao-main h2 { font-size: 1.35rem; }
+    .missao h2, .missao p { gap: 0; }
 
-    .grid{
-        grid-template-columns: 1fr;
+    .investigacao-contentor {
+        flex: 0 0 calc(100% - 2rem);
     }
 
-    .item{
-        text-align: center;
+    .investigacao-viewport {
+        width: 70%;
     }
 
-    .conquistas h2{
-        font-size: 1.5rem;
+    .prev, .next {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem;
+        flex-shrink: 0;
     }
 
-    footer{
+    /* Footer */
+
+    footer {
         padding: 2rem 1rem;
     }
 
-    footer .footer-container{
+    footer .footer-container {
         flex-direction: column;
         width: 100%;
         align-items: center;
@@ -622,97 +673,53 @@ footer input{
         text-align: center;
     }
 
-    .contactos{
+    footer h1 {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    footer button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    footer input {
+        width: 100%;
+        padding: 0.6rem;
+    }
+
+    .contactos {
         align-items: center;
     }
 
-    .email{
+    .email {
         width: 100%;
         align-items: center;
     }
 
-    .email-conteudo{
+    .email-conteudo {
         flex-direction: column;
         width: 100%;
         align-items: center;
         gap: 1rem;
     }
 
-    .email-campos{
+    .email-campos {
         width: 100%;
         max-width: 400px;
     }
 
-    footer input{
-        width: 100%;
-        padding: 0.6rem;
-    }
-
-    .email textarea{
+    .email textarea {
         width: 100%;
         max-width: 400px;
         min-height: 120px;
     }
 
-    footer button{
-        width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-
-    footer h1{
-        font-size: 1.2rem;
-    }
-    
-    footer p{
-        font-size: 0.9rem;
-    }
-    
-    .direitos p{
+    .direitos p {
         font-size: 0.5rem;
-    }    
-}    
-.scroll-to-top {
-   position:fixed;
-   bottom: 20px;
-   right: 20px;
-   border: solid 2px var(--cor-branco);
-   border-radius: 5%;
-   width: 100px;
-   height: 100px;
-   font-size: 40px;
-   color: #bbb la;;
-   background:var(--cor-azul);
-   cursor: pointer;
-   color:var(--cor-branco);
-}
-
-.scroll-to-top:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-    
-}
-.chart{
-
-max-width: 150px;
-height: 200px;
-padding: 20px;
-margin: 0 auto;
-max-height: 2em;
-}
-.chart .chart_types{
-    display:flex;
-    text-align: start;
-    text-align: start;
-    margin-bottom: 20px;
-    font-size: 2em;
-    font-size: 2em;
-}
-
-.chart .chart_types button{
-    padding: 2em 3em;
-    font-weight: bold;
-    font-size: 2em;
-    background-size: cover;
-
+    }
 }

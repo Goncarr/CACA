@@ -1,3 +1,8 @@
+/**
+ * 
+ */
+
+//variaveis
 const saberMais = document.querySelectorAll(".saberTexto");
 const btnInvestigacao = document.querySelectorAll('button[name="investigacaoBotao"]');
 const slides  = document.querySelectorAll(".parceria-slide");
@@ -6,14 +11,15 @@ const btnPrev = document.querySelector(".parceria-prev");
 const btnNext = document.querySelector(".parceria-next");
 
 
+/**
+ * 
+ */
+
 btnInvestigacao.forEach((btn) => {
     btn.addEventListener("click", function() {
-        // Find the specific description text related to this button
-        // In your HTML, it's the element with class 'saberTexto'
         const contentor = this.closest('.investigacao-contentor');
         const saberMais = contentor.querySelector(".saberTexto");
 
-        // Toggle logic
         if (saberMais.style.display === "block") {
             saberMais.style.display = "none";
             this.textContent = "Saber Mais";
