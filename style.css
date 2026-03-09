@@ -147,6 +147,7 @@ li a:hover::before {
     background-image: url(imagens/missao-objetivo/paisagem2.png);
 }
 
+
 .objetivo h2, .missao h2 {
     font-size: 4rem;
 }
