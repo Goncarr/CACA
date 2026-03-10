@@ -41,10 +41,9 @@ function Createchart(data, type) {
   myChart = new Chart(ctx, {
     type: type,
     data: {
-      labels: data.map((row) => row.month),
+      labels: data.map((row) => row.year),
       datasets: [
         {
-          label: "n de investigacoes/ por vez (em cada ano)",
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -120,4 +119,4 @@ function moveSlide(direction) {
 
 // Recalcula posição ao redimensionar para não ficar desalinhado
 window.addEventListener('resize', updateSlider);
-loadData('utils/data2025.json');
+loadData('utils/datainvestigacao.json');
