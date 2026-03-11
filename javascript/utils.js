@@ -4,7 +4,7 @@ let myChart;
 let jsonData;
 let currentChartType = "line";
 
-function loadData(jsonUrl) {
+function loadData(jsonUrl,button) {
   fetch(jsonUrl)
     .then(function (response) {
       if (response.ok) {
@@ -14,7 +14,7 @@ function loadData(jsonUrl) {
     })
     .then(function (data) {
       jsonData = data;
-      Createchart(jsonData, currentChartType);
+      Createchart(jsonData, currentChartType,button);
     })
     .catch(function (error) {
       console.error(error);
@@ -28,7 +28,7 @@ function setChartType(chartType) {
   }
 }
 
-function Createchart(data, type) {
+function Createchart(data, type, button) {
   if (!ctx) {
     console.warn("Canvas element not found: #myChart");
     return;
@@ -43,7 +43,8 @@ function Createchart(data, type) {
     data: {
       labels: data.map((row) => row.year),
       datasets: [
-        { 
+        {
+         label:button,
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -53,6 +54,7 @@ function Createchart(data, type) {
       scales: {
         y: {
           beginAtZero: true,
+        
         },
       },
     },
