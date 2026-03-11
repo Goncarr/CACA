@@ -894,3 +894,6 @@ footer input {
     .slideshow-container { height: 20rem; }
     .partner-text-container .text { font-size: 1rem; }
 }
+canvas{
+    max-height: 30rem;
+}

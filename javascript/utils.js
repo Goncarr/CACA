@@ -2,7 +2,7 @@ const scrollbutton = document.querySelector(".scroll-to-top");
 const ctx = document.getElementById("myChart");
 let myChart;
 let jsonData;
-let currentChartType = "line";
+let currentChartType = "bar";
 
 function loadData(jsonUrl) {
   fetch(jsonUrl)
@@ -54,7 +54,7 @@ function Createchart(data, type) {
       scales: {
         y: {
           beginAtZero: true,
-        },
+        }       
       },
     },
   });
