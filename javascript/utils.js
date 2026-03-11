@@ -4,7 +4,7 @@ let myChart;
 let jsonData;
 let currentChartType = "line";
 
-function loadData(jsonUrl,button) {
+function loadData(jsonUrl) {
   fetch(jsonUrl)
     .then(function (response) {
       if (response.ok) {
@@ -14,7 +14,7 @@ function loadData(jsonUrl,button) {
     })
     .then(function (data) {
       jsonData = data;
-      Createchart(jsonData, currentChartType,button);
+      Createchart(jsonData, currentChartType);
     })
     .catch(function (error) {
       console.error(error);
@@ -28,7 +28,7 @@ function setChartType(chartType) {
   }
 }
 
-function Createchart(data, type, button) {
+function Createchart(data, type) {
   if (!ctx) {
     console.warn("Canvas element not found: #myChart");
     return;
@@ -41,10 +41,10 @@ function Createchart(data, type, button) {
   myChart = new Chart(ctx, {
     type: type,
     data: {
-      labels: data.map((row) => row.year),
+      labels: data.map((row) => row.month),
       datasets: [
         {
-         label:button,
+          label: "n de investigacoes/ por vez (em cada ano)",
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -54,7 +54,6 @@ function Createchart(data, type, button) {
       scales: {
         y: {
           beginAtZero: true,
-        
         },
       },
     },
@@ -121,4 +120,4 @@ function moveSlide(direction) {
 
 // Recalcula posição ao redimensionar para não ficar desalinhado
 window.addEventListener('resize', updateSlider);
-loadData('utils/datainvestigacao.json');
+loadData('utils/data2025.json');

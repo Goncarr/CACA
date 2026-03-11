@@ -66,39 +66,39 @@
 
 <div class="investigacao-main">
     
-    <button class="prev" onclick="moveSlide(-1)"></button>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
     <div class="investigacao-viewport">
         <div class="investigacao-track" id="track">
             <div class="investigacao-contentor">
-                <img src="imagens/investigacao/AI.png" alt="Coisa">
+                <img src="imagens/investigacao/AI.png" alt="Investigacao Ai">
                 <p>14 novembro 2025 - 12 dezembro 2025</p>
                 <h2>Inteligência Artificial em Saúde</h2>
                 <p class="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
                 <button name="investigacaoBotao">Saber Mais</button>
             </div>
             <div class="investigacao-contentor">
-                <img src="imagens/investigacao/cirugia.png" alt="Coisa">
+                <img src="imagens/investigacao/cirugia.png" alt="Curugia">
                 <p>14 novembro 2025 - 12 dezembro 2025</p>
                 <h2>Currículo de Trauma de Coluna</h2>
                 <p class="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
                 <button name="investigacaoBotao">Saber Mais</button>
             </div>
             <div class="investigacao-contentor">
-                <img src="imagens/investigacao/saudeMental.png" alt="Coisa">
+                <img src="imagens/investigacao/saudeMental.png" alt="Saude Mental em estudantes Universitarios">
                 <p>14 novembro 2025 - 12 dezembro 2025</p>
                 <h2>Saúde Mental em Estudantes Universitários</h2>
                 <p class="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
                 <button name="investigacaoBotao">Saber Mais</button>
             </div>
             <div class="investigacao-contentor">
-                <img src="imagens/investigacao/primeirosSocorros.png" alt="Coisa">
+                <img src="imagens/investigacao/primeirosSocorros.png" alt="Primeiros Socorros">
                 <p>14 novembro 2025 - 12 dezembro 2025</p>
                 <h2>Primeiros Socorros em Contexto Escolar</h2>
                 <p class="saberTexto">Isto é uma descrição de exemplo, sendo esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
                 <button name="investigacaoBotao">Saber Mais</button>
             </div>
             <div class="investigacao-contentor">
-                <img src="imagens/investigacao/reabilitacaoFisica.png" alt="Coisa">
+                <img src="imagens/investigacao/reabilitacaoFisica.png" alt="Reabilitacao Fisica">
                 <p>14 novembro 2025 - 12 dezembro 2025</p>
                 <h2>Reabilitação Física Pós-Cirúrgica</h2>
                 <p class="saberTexto">Isto é uma descrição de exemplo, sendouma descrição de exemplo, sendo estuma descrição de exemplo, sendo estuma descrição de exemplo, sendo estuma descrição de exemplo, sendo estuma descrição de exemplo, sendo est esta uma notícia relacionada com um estudo feito pela UAC, nomeadamente a Faculdade de Ciências e Tecnologia.</p>
@@ -107,7 +107,7 @@
             
         </div>
     </div>
-    <button class="next" onclick="moveSlide(1)">></button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
 
 <!-- PARCERIAS -->
@@ -115,35 +115,48 @@
 <div id="Parcerias"></div>
 <h1>Parcerias</h1>
 
-<div class="parcerias">
-    <button class="parceria-btn parceria-prev" aria-label="Parceiro anterior">&#8249;</button>
-
-    <div class="parceria-slide active">
-        <img src="imagens/parcerias/uac.png" alt="Universidade dos Açores">
-        <p class="parceria-nome">Universidade dos Açores</p>
-    </div>
-    <div class="parceria-slide">
-        <img src="imagens/parcerias/associacao_doentes.png" alt="Associação de doentes">
-        <p class="parceria-nome">Associação de Doentes de Dor Crónica dos Açores</p>
-    </div>
-    <div class="parceria-slide">
-        <img src="imagens/parcerias/cuf.png" alt="CUF">
-        <p class="parceria-nome">CUF</p>
-    </div>
-    <div class="parceria-slide">
-        <img src="imagens/parcerias/hospital.png" alt="Hospital do Divino Espírito Santo">
-        <p class="parceria-nome">Hospital do Divino Espírito Santo</p>
+<div class="slideshow-container">
+    <div class="mySlides fade active" style="background-image: url('imagens/parcerias/uacBackground.png');">
+        <div class="partner-logo-container">
+            <img src="imagens/parcerias/uacLogo.png" alt="Logotipo UAC">
+        </div>
+        <div class="partner-text-container">
+            <div class="text">Universidade dos Açores - Formação contínua, investigação científica e apoio a estudantes.</div>
+        </div>
     </div>
 
-    <button class="parceria-btn parceria-next" aria-label="Próximo parceiro">&#8250;</button>
-
-    <div class="parceria-indicadores">
-        <span class="parceria-dot active" aria-label="Parceiro 1"></span>
-        <span class="parceria-dot" aria-label="Parceiro 2"></span>
-        <span class="parceria-dot" aria-label="Parceiro 3"></span>
-        <span class="parceria-dot" aria-label="Parceiro 4"></span>
+    <div class="mySlides fade" style="background-image: url('imagens/parcerias/espiritoSantoPaisagem.png');">
+        <div class="partner-logo-container">
+            <img src="imagens/investigacao/AI.png" alt="Logotipo AI"> </div>
+        <div class="partner-text-container">
+            <div class="text">Hospital Divino Espirito Santo - Referência em cuidados hospitalares e proximidade com a comunidade.</div>
+        </div>
     </div>
 
+    <div class="mySlides fade" style="background-image: url('imagens/parcerias/cufPaisagem.png');">
+        <div class="partner-logo-container">
+            <img src="imagens/parcerias/cuf-removebg-preview.png" alt="Logotipo CUF"> </div>
+        <div class="partner-text-container">
+            <div class="text">Hospital CUF - Suporte clínico especializado e excelência hospitalar.</div>
+        </div>
+    </div>
+    <div class="mySlides fade" style="background-image: url('imagens/parcerias/associacaoDoentesPaisagem.png');">
+        <div class="partner-logo-container">
+            <img src="imagens/parcerias/output-onlinepngtools.png" alt="Logotipo CUF"> </div>
+        <div class="partner-text-container">
+            <div class="text">Associação de Doentes de Dor Crónica - Apoio, sensibilização e melhoria da qualidade de vida dos doentes.</div>
+        </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="dots-container">
+    <span class="dot active" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
 </div>
 
 <h1>Consquistas</h1>
@@ -153,12 +166,9 @@
         <div class="myChart">
             <div class="chart_types">
 
-                <button onclick="loadData('utils/datainvestigacao.json','Numero de '+ 
-                'investigações por ano')">Investigações</button>
-                <button onclick="loadData('utils/dataparceiros.json','Numero de '+ 
-                'parceiros por ano')">Parceiros</button>
-                <button onclick="loadData('utils/dataprojetos.json','Numero de '+ 
-                'projetos por ano')">Projetos</button>
+                <button onclick="loadData('utils/data2025.json')">2025</button>
+                <button onclick="loadData('utils/data2026.json')">2026</button>
+                <button onclick="loadData('utils/data2027.json')">2027</button>
                 
             </div>
             <div>
@@ -167,6 +177,7 @@
         </div>
     </div>
 </div>
+
 <!-- FOOTER -->
 
 
@@ -193,6 +204,7 @@
         </div>
     </div>
 </footer>
+
     <div class="direitos">
         <p>© 2026 Centro Académico Clinico dos Açores. Todos os direitos reservados.<br>
             Financiando pela Universidade dos Açores<br>
