@@ -43,7 +43,7 @@ function Createchart(data, type) {
     data: {
       labels: data.map((row) => row.year),
       datasets: [
-        {
+        { 
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
