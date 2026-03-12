@@ -3,7 +3,7 @@ const ctx = document.getElementById("myChart");
 let myChart;
 let jsonData;
 let currentChartType = "bar";
-
+Chart.defaults.font.size=15.5;
 function loadData(jsonUrl) {
   fetch(jsonUrl)
     .then(function (response) {

@@ -1,14 +1,14 @@
 [
-    {"month":"janeiro","income":7},
-    {"month":"fevereiro","income":9},
-    {"month":"março","income":10},
-    {"month":"abril","income":12},
-    {"month":"maio","income":13},
-    {"month":"junho","income":11},
-    {"month":"julho","income":5},
-    {"month":"agosto","income":4},
-    {"month":"setembro","income":15},
-    {"month":"outubro","income":17},
-    {"month":"novembro","income":18},
-    {"month":"dezembro","income":12}
+    {"month":"Janeiro","income":7},
+    {"month":"Fevereiro","income":9},
+    {"month":"Março","income":10},
+    {"month":"Abril","income":12},
+    {"month":"Maio","income":13},
+    {"month":"Junho","income":11},
+    {"month":"Julho","income":5},
+    {"month":"Agosto","income":4},
+    {"month":"Setembro","income":15},
+    {"month":"Outubro","income":17},
+    {"month":"Novembro","income":18},
+    {"month":"Dezembro","income":12}
 ]
