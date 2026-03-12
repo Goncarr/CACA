@@ -897,3 +897,13 @@ footer input {
 canvas{
     max-height: 30rem;
 }
+.scrollTriggerLogo {
+  background-color: #202020;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 20px;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}

@@ -1,8 +1,9 @@
 /**
  * 
- */
+*/
 
 //variaveis
+const sections = document.querySelectorAll('section');
 const btnSaberMais = document.querySelectorAll(".saberTexto");
 const btnInvestigacao = document.querySelectorAll('button[name="investigacaoBotao"]');
 const slides  = document.querySelectorAll(".parceria-slide");
@@ -103,5 +104,42 @@ btnPrev.addEventListener("click", slideAnterior);
 dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
         mostrarSlide(i);
+      });
     });
+gsap.registerPlugin(ScrollTrigger);
+
+// Part 1
+gsap.to('header', { autoAlpha: 0, 
+    scrollTrigger: {
+      id: '',
+      trigger: '.scrollTriggerLogo',
+      start: 'top top+=100',
+      end: '+=200',
+      scrub: true,
+      // markers: true
+    } 
 });
+
+// Part 2
+
+sections.forEach((section, index) => {
+  gsap.to(section, {autoAlpha: 1,
+    scrollTrigger: {
+      trigger: section,
+      start: 'top bottom-=100',
+      toggleActions: 'play none none reverse',
+      // markers: true
+    }
+  });
+  
+  ScrollTrigger.create({
+    trigger: section,
+    id: index+1,
+    start: 'top center',
+    end: () => `+=${section.clientHeight + 30}`,
+    toggleActions: 'play reverse none reverse',
+    toggleClass: {targets: section, className: "is-active"},
+    // markers: true
+  })
+  
+})

@@ -4,10 +4,10 @@
 
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centro Académico Clínico dos Açores-CACA</title>
+<link rel="stylesheet" href="style.css">
 <script src="javascript/utils.js" defer></script>
 <script src="javascript/form-handler.js" defer></script>
 <script src="javascript/animations.js" defer></script>
@@ -18,8 +18,9 @@
     <header>
         
         <!-- CABEÇALHO -->
-        
         <div class="header-container">
+      <div class="scrollTriggerLogo">
+      </div> 
             <div class="logotipo-mobile">
                 <img src="imagens/logotipos/logotipo-mobile.png" alt="Logotipo CACA">
             </div>
@@ -34,32 +35,34 @@
                 <li><a href="#Missao">Missão</a></li>
                 <li><a href="#Investigacao">Investigação</a></li>
                 <li><a href="#Parcerias">Parcerias</a></li>
-                <li><a href="#Contactos">Conquistas</a></li>
+                <li><a href="#Conquistas">Conquistas</a></li>
                 <li><a href="#Contactos">Contactos</a></li>
             </ul>
         </div>
-        <script src="https://kit.fontawesome.com/f81a90484.js" crossorigin="anonymous"></script>
-    </header>
-    
-    <!-- MISSÃO -->
-    
+        
+        
+</header>
+
+<script src="https://kit.fontawesome.com/f81a90484.js" crossorigin="anonymous"></script>
+<!-- MISSÃO -->
+
 <div class="missao">
     <div id="Missao"></div>
     <h2>A nossa Missão</h2>
     <p>Ser uma instituição académica com o intuito de apoiar a realização
-    de projetos locais, promovendo a inovação e rigor a fim de inspirar 
-    boa fé e confiança no setor medicinal e farmacêutico.</p>
-</div>
-
-<!-- OBJETIVO -->
-<div class="objetivo">
-    <h2>Objetivo</h2>
-    <p>Apoiar os seus associados e servir como ponto de referência para estes,
-        com um foco em instituições clínicas e académicas locais e em alunos
-        com interesse nestas áreas.</p>
-</div>
-
-<!-- INVESTIGAÇÃO -->
+        de projetos locais, promovendo a inovação e rigor a fim de inspirar 
+        boa fé e confiança no setor medicinal e farmacêutico.</p>
+    </div>
+    
+    <!-- OBJETIVO -->
+    <div class="objetivo">
+        <h2>Objetivo</h2>
+        <p>Apoiar os seus associados e servir como ponto de referência para estes,
+            com um foco em instituições clínicas e académicas locais e em alunos
+            com interesse nestas áreas.</p>
+        </div>
+        
+        <!-- INVESTIGAÇÃO -->
 
 <div id="Investigacao"></div>
 <h1>Formação e Ensino</h1>
@@ -147,9 +150,6 @@
             <div class="text">Associação de Doentes de Dor Crónica - Apoio, sensibilização e melhoria da qualidade de vida dos doentes.</div>
         </div>
     </div>
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 
 <div class="dots-container">
@@ -159,8 +159,11 @@
     <span class="dot" onclick="currentSlide(4)"></span>
 </div>
 
-<h1>Consquistas</h1>
-    <div class="conquistas">
+<div id="Conquistas">
+    <h1>Consquistas</h1>
+</div>
+
+<div class="conquistas">
         <p>Em 2026 houve um aumento de 30% no ambito </p>
     <div class="conquistas-container">
         <div class="myChart">

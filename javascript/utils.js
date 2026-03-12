@@ -120,4 +120,5 @@ function moveSlide(direction) {
 
 // Recalcula posição ao redimensionar para não ficar desalinhado
 window.addEventListener('resize', updateSlider);
+ 
 loadData('utils/data2025.json');
