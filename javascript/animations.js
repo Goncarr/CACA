@@ -53,7 +53,7 @@ function showSlides(n) {
 
   slideTimer = setTimeout(function() {
     plusSlides(1); 
-  }, 10000); 
+  }, 5000); 
 }
 
 /**
