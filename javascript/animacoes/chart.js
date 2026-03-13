@@ -2,9 +2,28 @@ const ctx = document.getElementById("myChart");
 let myChart;
 let jsonData;
 let currentChartType = "bar";
-Chart.defaults.font.size=15.5;
 
-function loadData(jsonUrl) {
+/**
+ * Define o tamanho de texto para tablet, mobile e desktop
+ * @returns Tamanho do texto
+ */
+function getChartFontSize() {
+  if (window.innerWidth <= 600) return 9;
+  if (window.innerWidth <= 1350) return 12;
+  return 15.5;
+}
+
+Chart.defaults.font.size = getChartFontSize();
+window.addEventListener('resize', () => {
+  Chart.defaults.font.size = getChartFontSize();
+  if (jsonData) Createchart(jsonData, currentChartType);
+});
+
+/**
+ * Procura se um ficheiro json existe
+ * @param {Ficheiro json} jsonUrl 
+ */
+function loadData(jsonUrl,tipo) {
   fetch(jsonUrl)
     .then(function (response) {
       if (response.ok) {
@@ -14,21 +33,31 @@ function loadData(jsonUrl) {
     })
     .then(function (data) {
       jsonData = data;
-      Createchart(jsonData, currentChartType);
+      Createchart(jsonData, currentChartType,tipo);
     })
     .catch(function (error) {
       console.error(error);
     });
 }
 
+/**
+ * define o tipo de chart que vai ser utilizado
+ * @param {tipo de chart} chartType 
+ */
 function setChartType(chartType) {
   currentChartType = chartType;
   if (jsonData) {
-    Createchart(jsonData, currentChartType);
+    Createchart(jsonData, currentChartType,tipo);
   }
 }
 
-function Createchart(data, type) {
+/**
+ * cria um chart
+ * @param {informacao do ficheiro json} data 
+ * @param {Tipo de chart} type 
+ * @returns 
+ */
+function Createchart(data, type,tipo) {
   if (!ctx) {
     console.warn("Canvas element not found: #myChart");
     return;
@@ -44,7 +73,7 @@ function Createchart(data, type) {
       labels: data.map((row) => row.month),
       datasets: [
         {
-          label: "n de investigacoes/ por vez (em cada ano)",
+          label: tipo,
           data: data.map((row) => row.income),
           borderWidth: 1,
         },
@@ -60,4 +89,4 @@ function Createchart(data, type) {
   });
 }
 
-loadData('utils/datainvestigacao.json');
+loadData('utils/datainvestigacao.json','numero de investigadores');
